@@ -1,9 +1,41 @@
 import cosas.*
+import camion.*
 
 describe "group of test for cosas" {
 
-  test "first test" {
-    assert.that(true)
+  test "Embalaje con residuos radioactivos con peso 30" {
+    residuosRadioactivo.agregarResiduosRadioactivos(30)
+    embalajeDeSeguridad.cambiarCobertura(residuosRadioactivo)
+    assert.equals(100, embalajeDeSeguridad.peso())
+  }
+  test "Contenedor con bateria cargada, 20 de arena y bumblebee robot" {
+    bateriaAntiaerea.cargarMisiles()
+    arenaAGranel.cargarArena(20)
+    bumblebee.transformarseEnRobot()
+    contenedorPortuario.cargarCosa(bateriaAntiaerea) //300
+    contenedorPortuario.cargarCosa(arenaAGranel) //20
+    contenedorPortuario.cargarCosa(bumblebee) //800
+    assert.equals(1220, contenedorPortuario.peso())
   }
 
+  test "Bateria antiaerea"{
+    bateriaAntiaerea.cargarMisiles()
+    assert.that(bateriaAntiaerea.nivelPeligrosidad())
+  }
+
+  test "Paquete de ladrillos"{
+    paqueteLadrillos.cargarLadrillos(5)
+    paqueteLadrillos.descargarLadrillos(2)
+    assert.equals(13, paqueteLadrillos.cantLadrillos())
+  }
 }
+
+//describe ""{
+//  
+//  method initialize(){
+//    condiciones acá para todos los tests
+//  }
+//  test ""{
+//
+//  }
+//}

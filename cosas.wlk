@@ -10,28 +10,34 @@ object bumblebee {
 
     var estaTransformadoEnAuto = true
 
-    method nivelPeligrosidad() {
-        return if (estaTransformadoEnAuto) 15 else 30
-        }
+    method nivelPeligrosidad() = if (estaTransformadoEnAuto) 15 else 30
 
-    method estaTransformadoEnAuto() { return true
+    method estaTransformadoEnAuto() {
+        return estaTransformadoEnAuto
     }
 
-    method transformar() {
-        estaTransformadoEnAuto = not estaTransformadoEnAuto
-        }
+    method transformarseEnRobot() {
+        estaTransformadoEnAuto = false
+    }
+    method transformarseEnAuto() {
+        estaTransformadoEnAuto = true
+    }
 }
 object paqueteLadrillos {
     var cantLadrillos = 10
 
     method cantLadrillos() = cantLadrillos
+
     method cargarLadrillos(cantidad) {
         cantLadrillos += cantidad
     }
+
     method descargarLadrillos(cantidad) {
         cantLadrillos -= cantidad
     }
+
     method peso() = self.cantLadrillos() * 2
+    
     method nivelPeligrosidad() = 2
 }
 object arenaAGranel {

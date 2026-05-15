@@ -1,8 +1,13 @@
+import cosas.*
 import camion.*
 
 describe "group of test for camion" {
 
   test "first test" {
+    camion.cargarCosa(paqueteLadrillos)
+    camion.cargarCosa(bateriaAntiaerea)
+    camion.cargarCosa(contenedorPortuario)
+    camion.cargarCosa(embalajeDeSeguridad)
     assert.that(true)
   }
 
