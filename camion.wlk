@@ -1,8 +1,6 @@
-//comentario
+
 object camion {
     const cargaCamion = []
-
-    method algo() = 1
 
     method cargarCosa(cosa) {
         cargaCamion.add(cosa)
