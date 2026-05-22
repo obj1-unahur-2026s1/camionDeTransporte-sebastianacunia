@@ -40,4 +40,7 @@ object camion {
     method puedeCircular(peligrosidadPermitida){
         return not self.excedePesoPermitido() && not cargaCamion.any({c => c.nivelPeligrosidad() > peligrosidadPermitida})
     }
+    method prueba() {
+        
+    }
 }
